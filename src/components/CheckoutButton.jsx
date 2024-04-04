@@ -1,8 +1,23 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
-const CheckoutButton = () => {
+const CheckoutButton = ({cartItems, setCartItems}) => {
+
+    const navigate = useNavigate()
+
+    const handleCheckout = () => {
+        if(cartItems.length > 0) {
+            toast.success("Compra finalizada com sucesso!")
+            navigate("/thank-you", {state: {cartItems}})
+            setCarItems([])
+          } else {
+            toast.error("Seu carrinho está vazio")
+          }
+    }
+
   return (
-    <button>Finalizar Compra</button>
+    <button onClick={handleCheckout}>Finalizar Compra</button>
   )
 }
 
