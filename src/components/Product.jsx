@@ -9,10 +9,10 @@ const Product = ({product, onAddToCart}) => {
     <div className="product">
       <img src={product.image} alt={product.name} />
       <h3>{product.name}</h3>
-      <p>${product.price.toFixed(2)}</p>
+      <p>${product.price}</p>
       <div className="cart-buttons">
-            <select>
-                <option value="">1</option>
+            <select onChange={(e) => setQuantity(e.target.value)}>
+                {[...Array(10).keys()].map((x) => (<option key={x + 1} value={x + 1}>{x + 1}</option>))}
             </select>
             <button onClick={() => onAddToCart(product, quantity)}>Adicionar ao Carrinho</button>
         </div>
