@@ -74,3 +74,12 @@ nav a {
   background-color: #4cae4c;
 }
 
+.total {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.total p {
+  font-size: 18px;
+  font-weight: bold;
+}
