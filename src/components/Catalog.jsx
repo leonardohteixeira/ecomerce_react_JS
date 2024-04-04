@@ -9,7 +9,7 @@ const Catalog = () => {
   return (
     <div>
         <h1>Catálogo de produtos</h1>
-        <div className="products-container">
+        <div className="product-container">
             {productsData.map((product) => (
                 <Product key={product.id} product={product} />
             ))}
